@@ -87,9 +87,12 @@ class Login {
   onOpenURL(event) {
     if (event.url.startsWith(this.conf.appsite_uri)) {
       const {state, code} = querystring.parse(querystring.extract(event.url));
-      if (this.state.state === state) {
-        this.retrieveTokens(code);
-      }
+
+      // if (this.state.state === state) {
+      //   this.retrieveTokens(code);
+      // }
+
+      this.retrieveTokens(code);
     }
   }
 
